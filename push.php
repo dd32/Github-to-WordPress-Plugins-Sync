@@ -35,7 +35,7 @@ class Github_to_Worg_SVN {
 		$this->config = get_defined_vars();
 
 		// Defaults
-		if ( empty( $this->config['svn_location'] ) ) {
+		if ( empty( $this->config['svns_location'] ) ) {
 			$this->config['svns_location'] = __DIR__ . '/svns/';
 		}
 	}
@@ -114,7 +114,10 @@ class Github_to_Worg_SVN {
 		// Move branches/assets to /assets
 		$this->exec( "rm -rf {checkout_dir:/assets}" );
 		$this->exec( "mv {checkout_dir:/trunk/assets} {checkout_dir}" );
-	
+
+		// And remove them from tag/branch builds (Github will have it, but that's okay)
+		$this->exec( "rm -rf {checkout_dir:/}{branches,tags}/*/assets" );
+
 		// Add all files
 		$this->exec( "svn add --non-interactive --force {checkout_dir:/}*" );
 
