@@ -16,6 +16,7 @@ The use-case this has been written for is:
  * It's best to set a new user account, and give that commit priv for the plugin being sync'd
  * README.MD will NOT be converted to readme.txt automatically
  * All commits will show as being by the SVN sync user (but the commit message will detail the Github author/committer)
+ * This is best used for *self-contained* Plugins, Git submodules are ignored (as it internally uses SVN)
  * Certain "tokens" will be replaced in the SVN copy, allowing for dynamic builds, for example:
    * "%GITHUB_MERGE_SVN_REV%" will be replaced with the SVN version of the Github repo (Every commit will increment it, so it's a good numeric timeline identifier)
    * "%GITHUB_MERGE_DATE%" will be replaced with the current date upon which the sync happens, for example, 2014-12-25
