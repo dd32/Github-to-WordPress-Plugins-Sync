@@ -1,6 +1,8 @@
 Github to WordPress Plugins Sync
 ================================
 
+Note: WordPress.org uses a similar script I built from this for Feature Plugin syncing; see it here: https://meta.trac.wordpress.org/browser/sites/trunk/api.wordpress.org/public_html/dotorg/github-sync
+
 Scripts for syncing from Github to WordPress.org Plugins SVN
 
 This acts as a webhook for Github allowing WordPress plugins which live on Github to be sync'd to plugins.svn.wordpress.org.
